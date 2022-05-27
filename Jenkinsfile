@@ -6,7 +6,7 @@ pipeline {
 
         stage('Install softwares') {
             steps {
-                sh 'run.sh'
+                sh '/run.sh'
             }
         }
 
