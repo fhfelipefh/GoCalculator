@@ -24,13 +24,13 @@ pipeline {
         
         stage('Packer build') {
             steps {
-                sh "packer build packer_file.json"
+                sh "sudo packer build packer_file.json"
             }
         }
 
         stage('Docker run image') {
             steps {
-                sh "docker run -p 8081:8081 fhfelipefh/calculator:latest"
+                sh "sudo docker run -p 8081:8081 fhfelipefh/calculator:latest"
             }
         }
         
