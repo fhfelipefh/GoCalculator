@@ -26,6 +26,10 @@ func getHistory(writer http.ResponseWriter, request *http.Request) {
 	fmt.Fprintf(writer, "Operations: %v", list)
 }
 
+func printFmtOperationAndResult(a int, b int, operation string, result int) {
+	fmt.Printf("%d %s %d = %d\n", a, operation, b, result)
+}
+
 func getDiv(writer http.ResponseWriter, request *http.Request) {
 	vars := mux.Vars(request)
 	a, err := strconv.Atoi(vars["a"])
@@ -73,6 +77,6 @@ func getSum(writer http.ResponseWriter, request *http.Request) {
 	vars := mux.Vars(request)
 	a, _ := strconv.Atoi(vars["a"])
 	b, _ := strconv.Atoi(vars["b"])
-	fmt.Fprintf(writer, "Sum of %s and %s is %s", a, b, (a + b))
+	printFmtOperationAndResult(a, b, " + ", a+b)
 	list = append(list, fmt.Sprintf("%d + %d = %d", a, b, a+b))
 }
