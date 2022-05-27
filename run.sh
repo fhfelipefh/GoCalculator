@@ -1,3 +1,4 @@
+#!/bin/bash
 echo 'run apt update'
 apt update -y
 echo 'run apt install curl'
