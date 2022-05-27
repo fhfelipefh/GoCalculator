@@ -4,15 +4,27 @@ pipeline {
 
     stages {
 
-        stage('Packer validate') {
-                steps {
-                    sh 'packer validate "packer_file.json"'
-                }
+        stage('Install softwares') {
+            steps {
+                sh 'sudo ./run.sh'
+            }
         }
 
+        stage('Packer validate') {
+            steps {
+                sh 'packer validate packer_file.json'
+            }
+        }
+        
         stage('Packer build') {
             steps {
-                sh 'packer build "packer_file.json"'
+                sh "packer build packer_file.json"
+            }
+        }
+
+        stage('Docker run image') {
+            steps {
+                sh "docker run -p 8081:8081 fhfelipefh/calculator:latest"
             }
         }
     }
