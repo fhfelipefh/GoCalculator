@@ -6,7 +6,7 @@ pipeline {
         
         stage('Set permission to execute') {
             steps {
-                sh 'chmod 777 install.sh && chmod 777 run.sh'
+                sh 'chmod 777 install.sh && chmod 777 run.sh && chmod 777 startup.sh'
             }
         }
         
@@ -37,6 +37,12 @@ pipeline {
         stage('Verify docker image is running') {
             steps {
                 sh "sudo docker ps"
+            }
+        }
+
+          stage('Define a inicialização do container com o sistema') {
+            steps {
+                sh "./startup.sh"
             }
         }
         
