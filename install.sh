@@ -10,7 +10,9 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 echo 'run apt update'
 sudo apt update -y
 echo 'run apt install docker-ce'
-sudo apt install docker-ce -y
+if ! [ -x "$(command -v docker)" ]; then
+  sudo apt install docker-ce -y
+fi
 echo 'docker hello-world'
 sudo docker run hello-world
 echo 'run docker ps'
