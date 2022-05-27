@@ -1,12 +1,12 @@
 pipeline {
 
-    agent any
+    agent (label 'linux')
 
     stages {
 
         stage('Install softwares') {
             steps {
-                sh './run.sh'
+                sh 'run.sh'
             }
         }
 
