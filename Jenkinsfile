@@ -6,7 +6,7 @@ pipeline {
         
         stage('Set permission to execute') {
             steps {
-                sh 'chmod 777 install.sh'
+                sh 'chmod 777 install.sh && chmod 777 run.sh'
             }
         }
         
