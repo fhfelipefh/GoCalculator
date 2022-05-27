@@ -1,10 +1,10 @@
 #!/bin/bash
 echo 'run apt update'
-apt update -y
+sudo apt update -y
 echo 'run apt install curl'
-apt install curl -y
+sudo apt install curl -y
 echo 'add docker key'
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 echo 'add docker repository'
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 echo 'run apt update'
