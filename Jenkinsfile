@@ -6,13 +6,13 @@ pipeline {
         
         stage('Set permission to execute') {
             steps {
-                sh 'chmod 777 run.sh'
+                sh 'chmod 777 install.sh'
             }
         }
         
         stage('Install softwares') {
             steps {
-                sh './run.sh'
+                sh './install.sh'
             }
         }
 
@@ -30,7 +30,13 @@ pipeline {
 
         stage('Docker run image') {
             steps {
-                sh "sudo docker run -p 8081:8081 fhfelipefh/calculator:latest -d"
+                sh "./run.sh"
+            }
+        }
+
+        stage('Verify docker image is running') {
+            steps {
+                sh "sudo docker ps"
             }
         }
         

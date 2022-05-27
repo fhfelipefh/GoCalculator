@@ -7,3 +7,6 @@ uma imagem docker fazendo build, essa automação foi realizada no Jenkins usand
 - Instale o Jenkins
 - Permita ao Jenkins ser usuário root, isso pode ser feito adicionando a linha: 'jenkins ALL=(ALL) NOPASSWD: ALL' no arquivo que será aberto ao digitar 'sudo visudo' entretanto ao fazer isso se atente que autorizar o jenkins como um todo a ser usuário root pode afetar a segurança da aplicação.
 - Crie um pipeline e atribua o SCM a esse repositório.
+- Execute uma tarefa de build e acesse o os endereços (EX: http://IP-DO-SERVIDOR/calc/sum/1/1)
+
+OBS: Liberar as portas 8080 e 8081 no firewall da cloud utilizada.
