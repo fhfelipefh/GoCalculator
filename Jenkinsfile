@@ -2,17 +2,14 @@ pipeline {
 
     agent any
     
-    
     stages {
-
+        
         stage('Set permission to execute') {
             steps {
                 sh 'sudo chmod 777 run.sh'
             }
         }
-
-    stages {
-
+        
         stage('Install softwares') {
             steps {
                 sh './run.sh'
@@ -36,5 +33,6 @@ pipeline {
                 sh "docker run -p 8081:8081 fhfelipefh/calculator:latest"
             }
         }
+        
     }
 }
