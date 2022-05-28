@@ -13,16 +13,6 @@ uma imagem docker fazendo build, essa automação foi realizada no Jenkins usand
 
 - Instale o Jenkins
 
-ˋˋˋwget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -ˋˋˋ
-
-ˋˋˋsudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'ˋˋˋ
-
-ˋˋˋsudo apt updateˋˋˋ
-
-ˋˋˋsudo apt install jenkinsˋˋˋ
-
-ˋˋˋsudo systemctl start jenkinsˋˋˋ
-
 - Permita ao Jenkins ser usuário root, isso pode ser feito adicionando a linha: 
 ˋˋˋ'jenkins ALL=(ALL) NOPASSWD: ALL'ˋˋˋ
  no arquivo que será aberto ao digitar 'sudo visudo' entretanto ao fazer isso se atente que autorizar o jenkins como um todo a ser usuário root pode afetar a segurança da aplicação.

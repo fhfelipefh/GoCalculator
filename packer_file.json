@@ -6,7 +6,7 @@
             "commit": true,
             "changes": [
                 "EXPOSE 8081",
-                "ENTRYPOINT  [\"/bin/bash\", \"-c\", \"cd $HOME/files && go run calculator &\"] "
+                "ENTRYPOINT  [\"/bin/bash\", \"-c\", \"cd $HOME/files && go run calculator \"] "
                 ]
         }
     ],
