@@ -4,4 +4,6 @@ sudo cp run.sh /etc/init.d/
 sudo chmod +x /etc/init.d/run.sh
 sudo update-rc.d run.sh defaults
 sudo service run.sh start
+sudo service run.sh status
+echo "Done"
 
