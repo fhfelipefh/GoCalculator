@@ -34,13 +34,7 @@ pipeline {
             }
         }
 
-        stage('Verify docker image is running') {
-            steps {
-                sh "sudo docker ps"
-            }
-        }
-
-          stage('Define a inicialização do container com o sistema') {
+        stage('Define a inicialização do container com o sistema') {
             steps {
                 sh "./startup.sh"
             }
