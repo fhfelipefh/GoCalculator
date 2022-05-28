@@ -26,5 +26,6 @@ then
      echo 'Verify'
      packer version
 fi
+sudo apt-get install nginx -y
 echo 'Done'
 
