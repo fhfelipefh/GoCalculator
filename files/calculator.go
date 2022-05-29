@@ -73,6 +73,6 @@ func getSum(writer http.ResponseWriter, request *http.Request) {
 	vars := mux.Vars(request)
 	a, _ := strconv.Atoi(vars["a"])
 	b, _ := strconv.Atoi(vars["b"])
-	fmt.Fprintf(writer, "Sum of %s and %s is %s", string(a), string(b), (a + b))
+	fmt.Fprintf(writer, "Sum of %s and %s is %s", a, b, (a + b))
 	list = append(list, fmt.Sprintf("%d + %d = %d", a, b, a+b))
 }
