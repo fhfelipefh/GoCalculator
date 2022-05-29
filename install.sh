@@ -1,8 +1,11 @@
 #!/bin/bash
 echo 'run apt update'
 sudo apt update -y
+# Install dependencies if not already installed
 echo 'run apt install curl'
-sudo apt install curl -y
+if ! dpkg -s curl >/dev/null 2>&1; then
+  sudo apt install curl -y
+fi
 echo 'add docker key'
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 echo 'add docker repository'
@@ -26,6 +29,5 @@ then
      echo 'Verify'
      packer version
 fi
-sudo apt-get install nginx -y
 echo 'Done'
 

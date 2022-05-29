@@ -10,5 +10,6 @@ echo 'start service'
 sudo service run.sh start
 echo 'service status'
 sudo service run.sh status
-echo "Done"
 sudo docker ps
+echo "Done"
+
